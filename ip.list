@@ -1,8 +1,8 @@
 #http://someonewhocares.org/hosts/zero
-http://winhelp2002.mvps.org/hosts.txt
-http://adaway.org/hosts.txt
-http://www.malwaredomainlist.com/hostslist/hosts.txt
-http://someonewhocares.org/hosts/hosts
-https://raw.githubusercontent.com/StevenBlack/hosts/master/data/StevenBlack/hosts
+#http://winhelp2002.mvps.org/hosts.txt
+#http://adaway.org/hosts.txt
+#http://www.malwaredomainlist.com/hostslist/hosts.txt
+#http://someonewhocares.org/hosts/hosts
+#https://raw.githubusercontent.com/StevenBlack/hosts/master/data/StevenBlack/hosts
 https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
 https://abpvn.com/android/abpvn.txt
