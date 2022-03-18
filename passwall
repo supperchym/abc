@@ -1,0 +1,239 @@
+
+config global
+	option socks_enabled '0'
+	option up_china_dns 'default'
+	option localhost_tcp_proxy_mode 'default'
+	option localhost_udp_proxy_mode 'default'
+	option close_log_tcp '0'
+	option close_log_udp '0'
+	option loglevel 'warning'
+	option trojan_loglevel '2'
+	option up_trust_doh_dns 'tcp'
+	option dns_cache '1'
+	option tcp_proxy_mode 'chnroute'
+	option udp_proxy_mode 'chnroute'
+	option udp_node 'nil'
+	option dns_mode 'pdnsd'
+	option dns_forward '1.1.1.1'
+	option enabled '0'
+	option tcp_node 'nil'
+
+config global_haproxy
+	option balancing_enable '0'
+
+config global_delay
+	option auto_on '0'
+	option start_delay '1'
+	option start_daemon '1'
+
+config global_forwarding
+	option process '0'
+	option udp_redir_ports '1:65535'
+	option accept_icmp '0'
+	option proxy_ipv6 '0'
+	option udp_no_redir_ports '80,443'
+	option tcp_redir_ports '22,25,53,143,465,587,993,995,80,443'
+	option tcp_no_redir_ports 'disable'
+	option tcp_proxy_way 'redirect'
+
+config global_other
+	option ipv6_tproxy '0'
+	option status 'big_icon show_check_port'
+	option nodes_ping 'auto_ping tcping info'
+
+config global_rules
+	option auto_update '0'
+	option chnlist_update '1'
+	option chnroute_update '1'
+	option gfwlist_update '1'
+	option geosite_update '0'
+	option geoip_update '0'
+	option v2ray_location_asset '/usr/share/xray/'
+	list gfwlist_url 'https://raw.githubusercontent.com/supperchym/abc/master/fw.conf'
+	list chnroute6_url 'https://ispip.clang.cn/all_cn_ipv6.txt'
+	option chnroute6_update '0'
+	list chnroute_url 'https://raw.githubusercontent.com/supperchym/abc/master/vnssr.txt'
+	list chnroute_url 'https://cdn.jsdelivr.net/gh/soffchen/GeoIP2-CN@release/CN-ip-cidr.txt'
+	list chnlist_url 'https://raw.githubusercontent.com/supperchym/abc/master/blank.txt'
+
+config global_app
+	option v2ray_file '/usr/bin/v2ray'
+	option xray_file '/usr/bin/xray'
+	option trojan_go_file '/usr/bin/trojan-go'
+	option kcptun_client_file '/usr/bin/kcptun-client'
+	option brook_file '/usr/bin/brook'
+	option hysteria_file '/usr/bin/hysteria'
+
+config global_subscribe
+	option subscribe_proxy '0'
+	option auto_update_subscribe '0'
+	option allowInsecure '1'
+	option filter_keyword_mode '1'
+	list filter_discard_list '过期时间'
+	list filter_discard_list '剩余流量'
+	list filter_discard_list 'QQ群'
+	list filter_discard_list '官网'
+
+config auto_switch
+	option testing_time '1'
+	option connect_timeout '3'
+	option retry_num '3'
+	option shunt_logic '1'
+	option restore_switch '1'
+	option enable '1'
+	list tcp_node '96cbf9e7a41b40199d4b7ad18c5d3cd2'
+	list tcp_node '08a64872eb8246499780c318e6762ce0'
+	list tcp_node '384addfdb8974428864222e6463338c6'
+	list tcp_node 'ae37b0b78355413c9c1161dde023d5c8'
+
+config shunt_rules 'ads'
+	option remarks '广告'
+	option domain_list 'geosite:category-ads'
+
+config shunt_rules 'China'
+	option remarks 'China'
+	option domain_list 'geosite:cn'
+	option ip_list 'geoip:cn'
+
+config shunt_rules 'Telegram'
+	option remarks 'Telegram'
+	option ip_list '149.154.160.0/20
+91.108.4.0/22
+91.108.56.0/24
+109.239.140.0/24
+67.198.55.0/24'
+
+config shunt_rules 'youtube'
+	option remarks 'youtube'
+	option domain_list 'youtube
+youtube.com
+youtu.be
+googlevideo.com
+ytimg.com
+gvt2.com'
+
+config shunt_rules 'netflix'
+	option remarks '奈飞'
+	option domain_list 'fast.com
+netflix
+netflix.com
+netflix.net
+nflxso.net
+nflxext.com
+nflximg.com
+nflximg.net
+nflxvideo.net
+netflixdnstest0.com
+netflixdnstest1.com
+netflixdnstest2.com
+netflixdnstest3.com
+netflixdnstest4.com
+netflixdnstest5.com
+netflixdnstest6.com
+netflixdnstest7.com
+netflixdnstest8.com
+netflixdnstest9.com'
+
+config shunt_rules 'TVB'
+	option remarks 'TVB'
+	option domain_list 'tvb.com
+mytvsuper.com'
+
+config nodes '08a64872eb8246499780c318e6762ce0'
+	option type 'SS'
+	option timeout '60'
+	option add_from '导入'
+	option password 'n8w4StnbVD9dmXYn4Ajt87EA'
+	option port '31572'
+	option address '84.17.57.66'
+	option remarks 'Hong Kong 1 🇭🇰 (t.me/SurfShark_ALA)'
+	option method 'aes-256-gcm'
+	option add_mode '1'
+
+config nodes '384addfdb8974428864222e6463338c6'
+	option remarks 'Hong Kong 2 🇭🇰 (t.me/SurfShark_ALA)'
+	option type 'SS'
+	option address '84.17.37.158'
+	option port '31572'
+	option password 'n8w4StnbVD9dmXYn4Ajt87EA'
+	option timeout '300'
+	option tcp_fast_open 'false'
+	option plugin 'none'
+	option use_kcp '0'
+
+config nodes '95f2aa17f38241edb312c7becfda43f4'
+	option type 'SS'
+	option timeout '60'
+	option add_from '导入'
+	option password 'aYNeKDMzYQYw4KbUbJA8Wszq'
+	option port '31944'
+	option address '212.102.42.194'
+	option remarks 'HongKong'
+	option method 'aes-256-gcm'
+	option add_mode '1'
+
+config nodes '75c5cd5824db486db6fea36b473e8024'
+	option type 'SS'
+	option timeout '60'
+	option add_from '导入'
+	option password 'aYNeKDMzYQYw4KbUbJA8Wszq'
+	option port '31944'
+	option address '212.102.42.206'
+	option remarks 'HongKong'
+	option method 'aes-256-gcm'
+	option add_mode '1'
+
+config nodes '96cbf9e7a41b40199d4b7ad18c5d3cd2'
+	option remarks 'hongkong-plati.market'
+	option type 'SS'
+	option port '32695'
+	option password 'yFB2tWXdYGgR9L48LbgqqLbk'
+	option plugin 'none'
+	option use_kcp '0'
+	option method 'aes-256-gcm'
+	option timeout '60'
+	option address '212.102.42.206'
+	option tcp_fast_open 'true'
+
+config nodes 'ae37b0b78355413c9c1161dde023d5c8'
+	option remarks 'singapore-plati.market'
+	option type 'SS'
+	option address 'sg-sng.prod.surfshark.com'
+	option port '32695'
+	option password 'yFB2tWXdYGgR9L48LbgqqLbk'
+	option timeout '300'
+	option tcp_fast_open 'true'
+	option plugin 'none'
+	option use_kcp '0'
+	option method 'aes-256-gcm'
+
+config haproxy_config
+	option enabled '1'
+	option haproxy_port '1181'
+	option lbweight '5'
+	option lbss '96cbf9e7a41b40199d4b7ad18c5d3cd2'
+	option backup '0'
+	option export 'br-lan5'
+
+config haproxy_config
+	option enabled '1'
+	option haproxy_port '1181'
+	option export '0'
+	option lbss '08a64872eb8246499780c318e6762ce0'
+	option backup '0'
+	option lbweight '5'
+
+config haproxy_config
+	option enabled '1'
+	option haproxy_port '1181'
+	option lbweight '5'
+	option export '0'
+	option lbss 'ae37b0b78355413c9c1161dde023d5c8'
+	option backup '0'
+
+config nodes '7c55d4fe0b9d4e459174b39d28e07d1f'
+	option remarks 'sc'
+	option type 'Socks'
+	option address '175.100.88.83'
+	option port '33427'
+
